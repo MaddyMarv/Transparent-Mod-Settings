@@ -7,6 +7,23 @@ local DEFAULT_TEXTURE_ALPHA = 204
 local DEFAULT_ICON_ALPHA = 80
 local DEFAULT_GAME_WORLD_BLUR = 1.1
 
+local function get_alpha_values()
+    local is_enabled = mod:is_enabled()
+    local bg_opacity_pct = is_enabled and (mod:get("background_opacity") or 50) or 100
+    local icon_opacity_pct = is_enabled and (mod:get("background_icon_opacity") or 50) or 100
+    local blur_pct = is_enabled and (mod:get("game_world_blur") or 0) or 100
+
+    local bg_factor = bg_opacity_pct / 100
+    local icon_factor = icon_opacity_pct / 100
+    local blur_factor = blur_pct / 100
+
+    local rect_alpha = math_floor(DEFAULT_RECT_ALPHA * bg_factor + 0.5)
+    local texture_alpha = math_floor(DEFAULT_TEXTURE_ALPHA * bg_factor + 0.5)
+    local icon_alpha = math_floor(DEFAULT_ICON_ALPHA * icon_factor + 0.5)
+
+    return rect_alpha, texture_alpha, icon_alpha, blur_factor
+end
+
 local function update_widget_pass_alphas(widget, rect_alpha, texture_alpha, icon_alpha)
     if not widget then return end
 
@@ -66,18 +83,7 @@ local function apply_transparency(view)
         return
     end
 
-    local is_enabled = mod:is_enabled()
-    local bg_opacity_pct = is_enabled and (mod:get("background_opacity") or 50) or 100
-    local icon_opacity_pct = is_enabled and (mod:get("background_icon_opacity") or 50) or 100
-    local blur_pct = is_enabled and (mod:get("game_world_blur") or 0) or 100
-
-    local bg_factor = bg_opacity_pct / 100
-    local icon_factor = icon_opacity_pct / 100
-    local blur_factor = blur_pct / 100
-
-    local rect_alpha = math_floor(DEFAULT_RECT_ALPHA * bg_factor + 0.5)
-    local texture_alpha = math_floor(DEFAULT_TEXTURE_ALPHA * bg_factor + 0.5)
-    local icon_alpha = math_floor(DEFAULT_ICON_ALPHA * icon_factor + 0.5)
+    local rect_alpha, texture_alpha, icon_alpha, blur_factor = get_alpha_values()
 
     update_widget_pass_alphas(view._widgets_by_name.background, rect_alpha, texture_alpha, nil)
     update_widget_pass_alphas(view._widgets_by_name.background_icon, nil, nil, icon_alpha)
@@ -93,8 +99,32 @@ local function get_active_options_view()
     return nil
 end
 
-mod:hook_safe("DMFOptionsView", "on_enter", function(self)
-    apply_transparency(self)
+local function setup_dmf_options_view_hooks()
+    local target_class = rawget(_G, "CLASS") and CLASS.DMFOptionsView or rawget(_G, "DMFOptionsView")
+    if not target_class then
+        return
+    end
+
+    mod:hook_safe(target_class, "on_enter", function(self)
+        apply_transparency(self)
+    end)
+
+    mod:hook_safe(target_class, "_draw_widgets", function(self)
+        apply_transparency(self)
+    end)
+end
+
+-- Hook when all mods are loaded (after DMF initializes dmf_options_view)
+function mod.on_all_mods_loaded()
+    setup_dmf_options_view_hooks()
+
+    local _, _, _, blur_factor = get_alpha_values()
+    apply_blur(blur_factor)
+end
+
+-- Also register require hook in case dmf_options_view is loaded or re-required
+mod:hook_require("dmf/scripts/mods/dmf/modules/ui/options/dmf_options_view", function(instance)
+    setup_dmf_options_view_hooks()
 end)
 
 function mod.on_setting_changed(setting_id)
@@ -102,8 +132,8 @@ function mod.on_setting_changed(setting_id)
     if view then
         apply_transparency(view)
     else
-        local blur_pct = mod:is_enabled() and (mod:get("game_world_blur") or 0) or 100
-        apply_blur(blur_pct / 100)
+        local _, _, _, blur_factor = get_alpha_values()
+        apply_blur(blur_factor)
     end
 end
 
@@ -111,6 +141,9 @@ function mod.on_enabled()
     local view = get_active_options_view()
     if view then
         apply_transparency(view)
+    else
+        local _, _, _, blur_factor = get_alpha_values()
+        apply_blur(blur_factor)
     end
 end
 

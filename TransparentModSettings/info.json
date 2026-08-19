@@ -9,9 +9,7 @@
     },
     "description": "Lets you make the DMF mod settings menu transparent with customizable opacity and blur sliders.",
     "order": {
-        "require": [
-            ""
-        ],
+        "require": [],
         "this_before": [],
         "this_after": []
     },
