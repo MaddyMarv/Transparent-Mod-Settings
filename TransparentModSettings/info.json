@@ -1,0 +1,19 @@
+{
+    "name": "Transparent Mod Settings",
+    "author": "IndicaBunny",
+    "version": "1.0.0",
+    "homepage": "https://www.nexusmods.com/warhammer40kdarktide/mods/XXXX",
+    "source": "https://github.com/MaddyMarv/Transparent-Mod-Settings",
+    "funding": {
+        "kofi": "https://ko-fi.com/indicabunny"
+    },
+    "description": "Lets you make the DMF mod settings menu transparent with customizable opacity and blur sliders.",
+    "order": {
+        "require": [
+            ""
+        ],
+        "this_before": [],
+        "this_after": []
+    },
+    "localization": {}
+}
