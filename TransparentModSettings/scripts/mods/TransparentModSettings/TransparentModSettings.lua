@@ -7,11 +7,16 @@ local DEFAULT_TEXTURE_ALPHA = 204
 local DEFAULT_ICON_ALPHA = 80
 local DEFAULT_GAME_WORLD_BLUR = 1.1
 
+local function is_in_game()
+    return rawget(_G, "Managers") and Managers.state and Managers.state.game_mode ~= nil
+end
+
 local function get_alpha_values()
     local is_enabled = mod:is_enabled()
-    local bg_opacity_pct = is_enabled and (mod:get("background_opacity") or 50) or 100
-    local icon_opacity_pct = is_enabled and (mod:get("background_icon_opacity") or 50) or 100
-    local blur_pct = is_enabled and (mod:get("game_world_blur") or 0) or 100
+    local in_game = is_in_game()
+    local bg_opacity_pct = (is_enabled and in_game) and (mod:get("background_opacity") or 50) or 100
+    local icon_opacity_pct = (is_enabled and in_game) and (mod:get("background_icon_opacity") or 50) or 100
+    local blur_pct = (is_enabled and in_game) and (mod:get("game_world_blur") or 0) or 100
 
     local bg_factor = bg_opacity_pct / 100
     local icon_factor = icon_opacity_pct / 100
