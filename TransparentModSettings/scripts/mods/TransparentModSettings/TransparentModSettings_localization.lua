@@ -36,7 +36,7 @@ return {
         en = "Custom Mouse Cursor",
     },
     custom_cursor_description = {
-        en = "Select a custom mouse cursor. Requires the 'SimpleAssets' mod.\n\nTo use, place any 32x32 or 64x64 .png image into the TransparentModSettings/cursor_1/, cursor_2/, or cursor_3/ folder and name it 'cursor.png'.",
+        en = "Select a custom mouse cursor. Requires the 'SimpleAssets' mod.\n\nTo use, place any 48x48 or 64x64 .png image into the TransparentModSettings/cursor_1/, cursor_2/, or cursor_3/ folder and name it 'cursor.png'.",
     },
     custom_cursor_default = {
         en = "Default",
