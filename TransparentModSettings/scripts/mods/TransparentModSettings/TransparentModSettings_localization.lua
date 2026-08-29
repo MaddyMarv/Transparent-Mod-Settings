@@ -32,4 +32,22 @@ return {
     percent = {
         en = "%%",
     },
+    custom_cursor = {
+        en = "Custom Mouse Cursor",
+    },
+    custom_cursor_description = {
+        en = "Select a custom mouse cursor. Requires the 'SimpleAssets' mod.\n\nTo use, place any 32x32 or 64x64 .png image into the TransparentModSettings/cursor_1/, cursor_2/, or cursor_3/ folder and name it 'cursor.png'.",
+    },
+    custom_cursor_default = {
+        en = "Default",
+    },
+    custom_cursor_1 = {
+        en = "Cursor 1",
+    },
+    custom_cursor_2 = {
+        en = "Cursor 2",
+    },
+    custom_cursor_3 = {
+        en = "Cursor 3",
+    },
 }

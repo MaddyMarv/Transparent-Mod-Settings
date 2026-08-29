@@ -6,5 +6,6 @@ Standalone mod that lets you make the Darktide Mod Framework (DMF) mod options m
 
 **Options:**
 - Background Options (Opacity, Emblem Opacity, Blur)
+- Custom Mouse Cursor (Requires SimpleAssets mod)
 
 🔗 **Links:** [Source Code](https://github.com/MaddyMarv/Transparent-Mod-Settings) | [Nexus Mods Profile](https://www.nexusmods.com/profile/indicabunny) | [Support Me on Ko-fi](https://ko-fi.com/indicabunny)

@@ -100,7 +100,54 @@ function mod.update(dt)
     end
 end
 
+local loaded_cursors = {}
+
+function mod.on_all_mods_loaded()
+    local SimpleAssets = get_mod("SimpleAssets")
+    if SimpleAssets then
+        local function load_and_cache(c_id)
+            local cursor_path = "mods/TransparentModSettings/" .. c_id .. "/cursor.png"
+            SimpleAssets.load_mouse_cursor(cursor_path, 0, 0):next(function(result)
+                if result and result.resource_name then
+                    loaded_cursors[c_id] = result.resource_name
+                    
+                    if mod:get("custom_cursor") == c_id then
+                        if rawget(_G, "Window") and Window.set_cursor then
+                            Window.set_cursor(result.resource_name)
+                        end
+                    end
+                end
+            end):catch(function(err)
+            end)
+        end
+
+        load_and_cache("cursor_1")
+        load_and_cache("cursor_2")
+        load_and_cache("cursor_3")
+    else
+        mod:echo("Needs SimpleAssets in order to work")
+    end
+end
+
 function mod.on_setting_changed(setting_id)
+    if setting_id == "custom_cursor" then
+        local cursor_setting = mod:get("custom_cursor")
+        if cursor_setting == "default" then
+            if rawget(_G, "Window") and Window.set_cursor then
+                Window.set_cursor("content/ui/textures/cursors/mouse_cursor_idle")
+            end
+        else
+            local resource_name = loaded_cursors[cursor_setting]
+            if resource_name then
+                if rawget(_G, "Window") and Window.set_cursor then
+                    Window.set_cursor(resource_name)
+                end
+            else
+                mod:echo("Cursor file not found or invalid format.")
+            end
+        end
+    end
+
     local ui_manager = rawget(_G, "Managers") and Managers.ui
     if ui_manager and ui_manager.view_active and ui_manager:view_active("dmf_options_view") then
         local view = ui_manager:view_instance("dmf_options_view")

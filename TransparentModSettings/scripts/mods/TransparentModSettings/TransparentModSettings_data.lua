@@ -35,6 +35,17 @@ return {
                         decimals_number = 0,
                         unit_text = "percent",
                     },
+                    {
+                        setting_id = "custom_cursor",
+                        type = "dropdown",
+                        default_value = "default",
+                        options = {
+                            { text = "custom_cursor_default", value = "default" },
+                            { text = "custom_cursor_1", value = "cursor_1" },
+                            { text = "custom_cursor_2", value = "cursor_2" },
+                            { text = "custom_cursor_3", value = "cursor_3" },
+                        },
+                    },
                 },
             },
         },
