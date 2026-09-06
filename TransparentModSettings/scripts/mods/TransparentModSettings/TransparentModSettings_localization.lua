@@ -3,7 +3,7 @@ return {
         en = "Transparent Mod Settings",
     },
     mod_description = {
-        en = "Adds customizable transparency and background blur sliders for the Darktide Mod Framework (DMF) mod settings menu.",
+        en = "Makes the Darktide Mod Framework (DMF) options menu transparent with adjustable background opacity and blur controls.",
     },
     tab_general = {
         en = "General Settings",

@@ -7,7 +7,7 @@ Custom Mouse Cursors:
 Requires SimpleAssets. Place a 48x48 or 64x64 PNG named cursor.png in TransparentModSettings/cursor_1/, cursor_2/, or cursor_3/.
 
 Recommended:
-- [PauseVision](https://www.nexusmods.com/warhammer40kdarktide/mods/329) (for the escape menu)
+[PauseVision](https://www.nexusmods.com/warhammer40kdarktide/mods/329) (for the escape menu)
 
 **Options:**
 
