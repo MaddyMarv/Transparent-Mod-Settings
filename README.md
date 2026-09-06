@@ -16,6 +16,6 @@ For the escape menu, if you haven't already downloaded it :) 
 - Background Opacity (%)
 - Emblem Opacity (%)
 - Game World Blur
-- Custom Mouse Cursor (Requires SimpleAssets)
+- Custom Mouse Cursor [Default, Cursor 1, Cursor 2, Cursor 3] (Requires SimpleAssets)
 
 🔗 **Links:** [Source Code](https://github.com/MaddyMarv/Transparent-Mod-Settings) | [Nexus Mods Profile](https://www.nexusmods.com/profile/indicabunny) | [Support Me on Ko-fi](https://ko-fi.com/indicabunny)
