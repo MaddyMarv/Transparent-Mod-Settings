@@ -11,7 +11,11 @@ For the escape menu, if you haven't already downloaded it :) 
 [PauseVision](https://www.nexusmods.com/warhammer40kdarktide/mods/329)
 
 **Options:**
-- Background Options (Opacity, Emblem Opacity, Blur)
-- Custom Mouse Cursor (Requires SimpleAssets mod)
+
+**General Settings**
+- Background Opacity (%)
+- Emblem Opacity (%)
+- Game World Blur
+- Custom Mouse Cursor (Requires SimpleAssets)
 
 🔗 **Links:** [Source Code](https://github.com/MaddyMarv/Transparent-Mod-Settings) | [Nexus Mods Profile](https://www.nexusmods.com/profile/indicabunny) | [Support Me on Ko-fi](https://ko-fi.com/indicabunny)
