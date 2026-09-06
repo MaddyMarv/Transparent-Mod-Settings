@@ -1,14 +1,13 @@
 ### [Transparent Mod Settings](https://www.nexusmods.com/warhammer40kdarktide/mods/1205)
 <img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/8f4e6cbc-1de1-4365-a4f7-8b1e74a8afc1" />
 
-Standalone mod that lets you make the Darktide Mod Framework (DMF) mod options menu transparent with customizable slider bars.
+Makes the Darktide Mod Framework (DMF) options menu transparent with adjustable background opacity and blur controls.
 
-For custom mouse cursors, please read:
-Requires the 'SimpleAssets' mod. To use, place any 48x48 or 64x64 (.png) image (can be any size but recommended) into the TransparentModSettings/cursor_1/, cursor_2/, or cursor_3/ folder and name it 'cursor.png'.
+Custom Mouse Cursors:
+Requires SimpleAssets. Place a 48x48 or 64x64 PNG named cursor.png in TransparentModSettings/cursor_1/, cursor_2/, or cursor_3/.
 
-For the escape menu, if you haven't already downloaded it :) 
-
-[PauseVision](https://www.nexusmods.com/warhammer40kdarktide/mods/329)
+Recommended:
+- [PauseVision](https://www.nexusmods.com/warhammer40kdarktide/mods/329) (for the escape menu)
 
 **Options:**
 
