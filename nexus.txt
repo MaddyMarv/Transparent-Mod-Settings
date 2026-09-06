@@ -15,4 +15,5 @@ For the escape menu, if you haven't already downloaded it :) 
 - Game World Blur
 - Custom Mouse Cursor [Default, Cursor 1, Cursor 2, Cursor 3] (Requires SimpleAssets)
 
-[b]Links:[/b] [url=https://github.com/MaddyMarv/Transparent-Mod-Settings]Source Code[/url] | [url=https://www.nexusmods.com/profile/indicabunny]Nexus Mods Profile[/url] | [url=https://ko-fi.com/indicabunny]Support Me on Ko-fi[/url]
+[b]Links:[/b]
+[url=https://github.com/MaddyMarv/Transparent-Mod-Settings]Source Code[/url] | [url=https://www.nexusmods.com/profile/indicabunny]Nexus Mods Profile[/url] | [url=https://ko-fi.com/indicabunny]Support Me on Ko-fi[/url]
