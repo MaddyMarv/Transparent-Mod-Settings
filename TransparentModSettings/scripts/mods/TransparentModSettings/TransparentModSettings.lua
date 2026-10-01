@@ -125,7 +125,7 @@ function mod.on_all_mods_loaded()
         load_and_cache("cursor_2")
         load_and_cache("cursor_3")
     else
-        mod:echo("Needs SimpleAssets for custom cursors in order to work")
+        mod:echo("The custom cursor feature requires the SimpleAssets mod. Please ensure you have it installed correctly.")
     end
 end
 
