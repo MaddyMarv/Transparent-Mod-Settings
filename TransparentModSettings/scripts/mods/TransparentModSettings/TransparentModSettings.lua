@@ -125,7 +125,10 @@ function mod.on_all_mods_loaded()
         load_and_cache("cursor_2")
         load_and_cache("cursor_3")
     else
-        mod:echo("The custom cursor feature requires the SimpleAssets mod.")
+        local cursor_setting = mod:get("custom_cursor")
+        if cursor_setting and cursor_setting ~= "default" then
+            mod:echo(mod:localize("msg_simple_assets_required"))
+        end
     end
 end
 
@@ -137,13 +140,18 @@ function mod.on_setting_changed(setting_id)
                 Window.set_cursor("content/ui/textures/cursors/mouse_cursor_idle")
             end
         else
-            local resource_name = loaded_cursors[cursor_setting]
-            if resource_name then
-                if rawget(_G, "Window") and Window.set_cursor then
-                    Window.set_cursor(resource_name)
-                end
+            local SimpleAssets = get_mod("SimpleAssets")
+            if not SimpleAssets then
+                mod:echo(mod:localize("msg_simple_assets_required"))
             else
-                mod:echo("Cursor file not found or invalid format.")
+                local resource_name = loaded_cursors[cursor_setting]
+                if resource_name then
+                    if rawget(_G, "Window") and Window.set_cursor then
+                        Window.set_cursor(resource_name)
+                    end
+                else
+                    mod:echo(mod:localize("msg_cursor_not_found"))
+                end
             end
         end
     end

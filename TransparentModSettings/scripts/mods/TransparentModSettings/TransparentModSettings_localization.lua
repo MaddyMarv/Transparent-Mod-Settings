@@ -50,4 +50,10 @@ return {
     custom_cursor_3 = {
         en = "Cursor 3",
     },
+    msg_simple_assets_required = {
+        en = "The custom cursor feature requires the SimpleAssets mod.",
+    },
+    msg_cursor_not_found = {
+        en = "Cursor file not found or invalid format.",
+    },
 }
