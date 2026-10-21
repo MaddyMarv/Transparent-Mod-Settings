@@ -9,12 +9,14 @@ Requires SimpleAssets. Place a 48x48 or 64x64 PNG named cursor.png in Transparen
 Recommended:
 [PauseVision](https://www.nexusmods.com/warhammer40kdarktide/mods/329) (for the escape menu)
 
-**Options:**
+<details>
+<summary><b>Mod Settings / Commands</b></summary>
 
 **General Settings**
 - Background Opacity (%)
 - Emblem Opacity (%)
 - Game World Blur
 - Custom Mouse Cursor [Default, Cursor 1, Cursor 2, Cursor 3] (Requires SimpleAssets)
+</details>
 
 🔗 **Links:** [Source Code](https://github.com/MaddyMarv/Transparent-Mod-Settings) | [Nexus Mods Profile](https://www.nexusmods.com/profile/indicabunny) | [Support Me on Ko-fi](https://ko-fi.com/indicabunny)
