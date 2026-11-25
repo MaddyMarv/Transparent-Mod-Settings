@@ -13,9 +13,9 @@ Recommended:
 <summary><b>Mod Settings / Commands</b></summary>
 
 **General Settings**
-- Background Opacity (%)
-- Emblem Opacity (%)
-- Game World Blur
+- Background Opacity
+- Background Emblem Opacity
+- Background Blur
 - Custom Mouse Cursor [Default, Cursor 1, Cursor 2, Cursor 3] (Requires SimpleAssets)
 </details>
 

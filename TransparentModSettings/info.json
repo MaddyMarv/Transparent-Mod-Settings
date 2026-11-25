@@ -7,7 +7,7 @@
     "funding": {
         "kofi": "https://ko-fi.com/indicabunny"
     },
-    "description": "Makes the Darktide Mod Framework (DMF) options menu transparent with adjustable background opacity and blur.",
+    "description": "Makes the Darktide Mod Framework (DMF) options menu transparent with adjustable background opacity and blur. Includes custom mouse cursors.",
     "dependencies": {
         "required": [],
         "self_after": [],
